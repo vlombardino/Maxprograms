@@ -1,7 +1,4 @@
-##Install Maxprograms
-##
-
-##########
+###########################################
 ##Swordfish
 
 sudo apt install openjdk-11-jdk git ant npm
@@ -38,7 +35,7 @@ Comment=Swordfish
 Categories=Swordfish
 EOF
 
-##########
+###########################################
 ##TMXEditor
 
 sudo apt install openjdk-11-jdk git ant npm
@@ -75,7 +72,7 @@ Comment=TMXEditor
 Categories=TMXEditor
 EOF
 
-##########
+###########################################
 ##Stingray
 
 sudo apt install openjdk-11-jdk git ant npm
@@ -112,7 +109,7 @@ Comment=Stingray
 Categories=Stingray
 EOF
 
-##########
+###########################################
 ##OpenXLIFF
 
 sudo apt install openjdk-11-jdk git ant npm
