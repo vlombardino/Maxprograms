@@ -1,0 +1,125 @@
+##Install Maxprograms
+##
+
+##########
+##Swordfish
+
+sudo apt install openjdk-11-jdk git ant npm
+sudo mkdir -p /opt/Maxprograms/
+sudo chmod 777 /opt/Maxprograms
+
+cd /opt/Maxprograms/
+git clone https://github.com/rmraya/Swordfish.git
+cd /opt/Maxprograms/Swordfish
+ant
+sudo npm install -g electron --unsafe-perm=true --allow-root
+npm install
+npm run build
+electron .
+
+##Update
+git -C /opt/Maxprograms/Swordfish/ pull
+#or
+cd /opt/Maxprograms/Swordfish && git pull
+#or
+sudo rm -r /opt/Maxprograms/Swordfish && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/Swordfish.git
+#rebuild build clone
+
+cat << EOF >>  ~/.local/share/applications/swordfish.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=Swordfish
+Type=Application
+Exec=electron /opt/Maxprograms/Swordfish
+Icon=/opt/Maxprograms/Swordfish/icons/icon.png
+Terminal=false
+GenericName=Swordfish
+Comment=Swordfish
+Categories=Swordfish
+EOF
+
+##########
+##TMXEditor
+
+sudo apt install openjdk-11-jdk git ant npm
+sudo mkdir -p /opt/Maxprograms/
+sudo chmod 777 /opt/Maxprograms
+
+cd /opt/Maxprograms/
+git clone https://github.com/rmraya/TMXEditor.git
+cd /opt/Maxprograms/TMXEditor
+ant
+sudo npm install -g electron --unsafe-perm=true --allow-root
+npm install
+npm run build
+electron .
+
+##Update
+git -C /opt/Maxprograms/TMXEditor/ pull
+#or
+cd /opt/Maxprograms/TMXEditor && git pull
+#or
+sudo rm -r /opt/Maxprograms/TMXEditor && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/TMXEditor.git
+#rebuild build clone
+
+cat << EOF >>  ~/.local/share/applications/tmxeditor.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=TMXEditor
+Type=Application
+Exec=electron /opt/Maxprograms/TMXEditor
+Icon=/opt/Maxprograms/TMXEditor/icons/tmxeditor.png
+Terminal=false
+GenericName=TMXEditor
+Comment=TMXEditor
+Categories=TMXEditor
+EOF
+
+##########
+##Stingray
+
+sudo apt install openjdk-11-jdk git ant npm
+sudo mkdir -p /opt/Maxprograms/
+sudo chmod 777 /opt/Maxprograms
+
+cd /opt/Maxprograms/
+git clone https://github.com/rmraya/Stingray.git
+cd /opt/Maxprograms/Stingray
+ant
+sudo npm install -g electron --unsafe-perm=true --allow-root
+npm install
+npm run build
+electron .
+
+##Update
+git -C /opt/Maxprograms/Stingray/ pull
+#or
+cd /opt/Maxprograms/Stingray && git pull
+#or
+sudo rm -r /opt/Maxprograms/Stingray && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/Stingray.git
+#rebuild build clone
+
+cat << EOF >>  ~/.local/share/applications/Stingray.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=Stingray
+Type=Application
+Exec=electron /opt/Maxprograms/Stingray
+Icon=/opt/Maxprograms/Stingray/icons/icon.png
+Terminal=false
+GenericName=Stingray
+Comment=Stingray
+Categories=Stingray
+EOF
+
+##########
+##OpenXLIFF
+
+sudo apt install openjdk-11-jdk git ant npm
+sudo mkdir -p /opt/Maxprograms/
+sudo chmod 777 /opt/Maxprograms
+
+cd /opt/Maxprograms/
+git clone https://github.com/rmraya/OpenXLIFF.git
+cd /opt/Maxprograms/OpenXLIFF
+ant
