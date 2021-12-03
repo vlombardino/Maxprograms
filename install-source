@@ -96,7 +96,7 @@ cd /opt/Maxprograms/Stingray && git pull
 sudo rm -r /opt/Maxprograms/Stingray && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/Stingray.git
 #rebuild build clone
 
-cat << EOF >>  ~/.local/share/applications/Stingray.desktop
+cat << EOF >>  ~/.local/share/applications/stingray.desktop
 [Desktop Entry]
 Encoding=UTF-8
 Name=Stingray
