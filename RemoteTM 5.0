@@ -1,0 +1,136 @@
+keytool -genkey -keyalg RSA -noprompt -alias tomcat -dname "CN=localhost, OU=NA, O=NA, L=NA, S=NA, C=NA" -keystore keystore.jks -validity 9999 -storepass pass -keypass 198007
+
+wget https://developers.cloudflare.com/ssl/e2b9968022bf23b071d95229b5678452/origin_ca_rsa_root.pem
+
+keytool -import -alias root -keystore keystore.jks -trustcacerts -file origin_ca_rsa_root.pem
+
+keytool -certreq -alias tomcat -file tomcat.csr -keystore keystore.jks
+
+cat tomcat.csr
+
+cloudflare > Select Domain > SSL/TLS > Origin Server > Create Certificate > 
+select "Use my private key and CSR" > Paste the *.csr file contents into text area > click Create >
+Key Format > Select PKCS#7
+
+vim cloudflare.p7b
+
+keytool -import -alias tomcat -file cloudflare.p7b -keystore keystore.jks
+
+keytool -v -list -keystore keystore.jks
+
+-----
+
+cd /var/lib/tomcat9/conf/
+or
+cd /opt/tomcat/conf/
+
+-----
+
+vim /opt/tomcat/conf/server.xml
+<Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+           maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
+           defaultSSLHotConfigName="qa-maintenance.company.com">
+    <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+    <SSLHostConfig hostname="qa-maintenance.company.com" protocols="TLSv1.2,+TLSv1.1,+TLSv1">
+        <Certificate certificateKeystoreFile="conf/keystore.jks"
+                     type="RSA" certificateKeystorePassword="198007" />
+    </SSLHostConfig>
+</Connector>
+
+ufw allow 8443
+systemctl restart tomcat
+ss -tulwn
+
+###Ref
+https://stackoverflow.com/questions/69303404/tomcat-not-listening-on-port-8443
+https://computingforgeeks.com/install-oracle-java-openjdk-on-debian-linux/
+https://www.how2shout.com/linux/install-apache-tomcat-10-on-debian-11-linux/
+https://stackoverflow.com/questions/69303404/tomcat-not-listening-on-port-8443
+https://geekflare.com/tomcat-ssl-guide/
+https://community.cloudflare.com/t/cloudlflare-origin-certificate-on-tomcat/335326
+https://stackoverflow.com/questions/62248306/tomcat-tomee-ssl-config-with-cloudflare
+
+=============================================================================================================
+
+<Connector port="8443"   protocol="org.apache.coyote.http11.Http11NioProtocol"
+ maxThreads="150" SSLEnabled="true">
+ <SSLHostConfig>
+ <Certificate certificateKeyFile="/opt/certs/private.pem"
+ certificateFile="/opt/certs/domain-crt.crt"
+ type="RSA" />
+ </SSLHostConfig>
+ </Connector>
+ 
+<!-- Define an SSL Coyote HTTP/1.1 Connector on port 8443 -->
+<Connector
+           protocol="org.apache.coyote.http11.Http11AprProtocol"
+           port="8443" maxThreads="200"
+           scheme="https" secure="true" SSLEnabled="true"
+           SSLCertificateFile="conf/domain-crt.crt"
+           SSLCertificateKeyFile="conf/private.pem"
+           SSLVerifyClient="optional" SSLProtocol="TLSv1+TLSv1.1+TLSv1.2"/>
+           
+           
+<Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol" maxThreads="150" SSLEnabled="true" >
+	<UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+  <SSLHostConfig>
+  		<Certificate certificateKeyFile="/opt/cert/private.key" 
+  		certificateFile="/opt/cert/certificate.crt" 
+  		certificateChainFile="/opt/cert/ca_bundle.crt" type="RSA" />
+    </SSLHostConfig>
+</Connector>
+
+
+<!-- Define an SSL Coyote HTTP/1.1 Connector on port 8443 -->
+<Connector
+    protocol="org.apache.coyote.http11.Http11AprProtocol"
+    port="8443"
+    maxThreads="150"
+    SSLEnabled="true" >
+  <SSLHostConfig>
+    <Certificate
+        certificateKeyFile="/etc/keys/ssl/private.key"
+        certificateFile="/etc/keys/ssl/certificate.crt"
+        certificateChainFile="/etc/keys/ssl/ca_bundle.crt"
+        type="RSA"
+        />
+  </SSLHostConfig>
+</Connector>
+ 
+
+<Connector 
+     port="8443" 
+     protocol="org.apache.coyote.http11.Http11NioProtocol" 
+     maxThreads="150" SSLEnabled="true" scheme="https" secure="true" 
+     defaultSSLHotConfigName="qa-maintenance.company.com">
+    <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+    <SSLHostConfig hostname="qa-maintenance.company.com" protocols="TLSv1.2,+TLSv1.1,+TLSv1"> 
+    <Certificate 
+       certificateKeyFile="/etc/keys/ssl/private.key"
+       certificateFile="/etc/keys/ssl/certificate.crt"
+       certificateChainFile="/etc/keys/ssl/ca_bundle.crt"
+       type="RSA" />
+    </SSLHostConfig>
+</Connector>
+
+ 
+chown -R tomcat: /opt/tomcat
+systemctl restart tomcat
+ss -tulwn
+
+
+Debian | Ubuntu
+nano /etc/ssh/sshd_config
+vi /etc/ssh/sshd_config
+vim.tiny /etc/ssh/sshd_config
+
+Rocky
+dnf update
+dnf install openssh-server
+systemctl start sshd
+
+Rocky Linux 8
+
+Address: 192.168.1.19
+
+wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.14/bin/apache-tomcat-10.0.14.tar.gz
