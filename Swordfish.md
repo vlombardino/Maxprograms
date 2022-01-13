@@ -2,7 +2,7 @@
 
 ## Install from source
 The following are steps to install from source on Ubuntu 20.04
-
+---
 Install required software.
 ```
 sudo apt install openjdk-17-jdk git ant npm
