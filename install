@@ -2,6 +2,8 @@
 ##Swordfish
 
 wget https://www.maxprograms.com/downloads/Swordfish/Swordfish-*.bin
+wget https://www.maxprograms.com/downloads/Swordfish/Swordfish-4.13.0_x64.bin
+
 chmod +x Swordfish-*.bin
 sudo ./Swordfish-*.bin
 
