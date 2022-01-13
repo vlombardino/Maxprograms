@@ -5,8 +5,7 @@ The following are steps to install Swordfish from source on Ubuntu 20.04
 
 Install required software.
 ```
-sudo apt install openjdk-17-jdk
-sudo snap install git-ubuntu --edge --classic
+sudo apt install openjdk-17-jdk git
 sudo snap install ant --classic
 sudo snap install node --channel=latest/edge --classic
 ```
