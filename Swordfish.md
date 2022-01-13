@@ -3,7 +3,7 @@ The following are steps to install Swordfish from source on Ubuntu 20.04
 
 ---
 
-## Install software and build Swordfish from source.
+## Install software and build from source
 Install required software.
 ```
 sudo apt install openjdk-17-jdk git
@@ -21,7 +21,7 @@ cd /opt/Maxprograms/
 git clone https://github.com/rmraya/Swordfish.git
 cd /opt/Maxprograms/Swordfish
 ```
-Build Swordfish
+Build Swordfish.
 ```
 ant
 npm install
@@ -38,7 +38,7 @@ cd /opt/Maxprograms/Swordfish
 sudo npm install -g electron --unsafe-perm=true --allow-root
 electron .
 ```
-Create shortcut for Gnome
+Create shortcut for Gnome.
 ```
 cat << EOF >>  ~/.local/share/applications/swordfish.desktop
 [Desktop Entry]
