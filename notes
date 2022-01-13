@@ -1,52 +1,21 @@
-#If error: Please commit your changes or stash them before you merge. Aborting
-git stash
-git pull
-#optional
-git stash pop
-
-#optional launch
-npm start
-#or
-npm start --prefix /opt/Maxprograms/Swordfish
-#launch
-electron .
-
----------
-
-##Swordfish files
+# Swordfish files
 /opt/Maxprograms/Swordfish
 /usr/share/applications/swordfish.desktop
 /usr/bin/swordfish
 
-##Swordfish Install
+# Swordfish Install
 sudo rm -R /opt/Maxprograms
 
-##Swordfish config files
+# Swordfish config files
 sudo rm -R /home/ubuntu/.maxprograms
 
-##Swordfish java log files
+# Swordfish java log files
 sudo rm -R /home/ubuntu/.oracle_jre_usage
 
-##License Key
+# License Key
 sudo rm -R /home/ubuntu/.audio/snddrivr.msa
 
 ----------
 
-#FixLicense.jar
+# FixLicense.jar
 java –jar FixLicense.jar
-
-##########
-##Build app
-sudo apt install rpm
-
-npm init
-npm install electron --save-dev
-sudo npm install -g electron --unsafe-perm=true --allow-root
-npm start
-
-#Package Electron Application
-npm add --dev @electron-forge/cli
-npx electron-forge import
-
-npm install electron-builder --save-dev
-npm run dist
