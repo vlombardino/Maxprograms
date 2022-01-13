@@ -28,6 +28,7 @@ npm run build
 ```
 Install electron into Swordfish folder and launch Swordfish.
 ```
+sudo npm install -g electron --unsafe-perm=true --allow-root
 electron .
 ```
 
