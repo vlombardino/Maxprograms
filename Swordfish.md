@@ -23,11 +23,10 @@ cd /opt/Maxprograms/Swordfish
 Build Swordfish
 ```
 ant
-sudo npm install -g electron --unsafe-perm=true --allow-root
 npm install
 npm run build
 ```
-Launch Swordfish
+Install electron into Swordfish folder and launch Swordfish.
 ```
 electron .
 ```
