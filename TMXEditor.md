@@ -21,7 +21,7 @@ cd /opt/Maxprograms/
 git clone https://github.com/rmraya/TMXEditor.git
 cd /opt/Maxprograms/TMXEditor
 ```
-Build TMXEditor
+Build TMXEditor.
 ```
 ant
 npm install
@@ -38,7 +38,7 @@ cd /opt/Maxprograms/TMXEditor
 sudo npm install -g electron --unsafe-perm=true --allow-root
 electron .
 ```
-Create shortcut for Gnome
+Create shortcut for Gnome.
 ```
 cat << EOF >>  ~/.local/share/applications/tmxeditor.desktop
 [Desktop Entry]
