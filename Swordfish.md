@@ -1,5 +1,6 @@
 # Swordfish
-Install from source
+
+## Install from source
 
 Install required software.
 ```
