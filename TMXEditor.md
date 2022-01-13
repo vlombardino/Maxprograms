@@ -3,7 +3,7 @@ The following are steps to install TMXEditor from source on Ubuntu 20.04
 
 ---
 
-## Install software and build TMXEditor from source.
+## Install software and build TMXEditor from source
 Install required software.
 ```
 sudo apt install openjdk-17-jdk git
