@@ -25,6 +25,7 @@ Build Swordfish
 ant
 npm install
 npm run build
+npm start
 ```
 Install electron into Swordfish folder and launch Swordfish.
 ```
