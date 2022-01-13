@@ -1,5 +1,5 @@
 # Swordfish IV
-The following are steps to install from source on Ubuntu 20.04
+The following are steps to install Swordfish from source on Ubuntu 20.04
 
 ---
 
