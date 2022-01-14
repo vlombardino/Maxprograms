@@ -15,6 +15,7 @@ apt update && apt upgrade -y
 Allow root ssh access by adding PermitRootLogin
 ```
 vim.tiny /etc/ssh/sshd_config
+
 ####################ADD TEXT####################
 PermitRootLogin yes
 ################################################
@@ -51,6 +52,7 @@ update-alternatives --config java
 Add Java to environment file
 ```
 vim /etc/environment
+
 ####################ADD TEXT####################
 JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/bin/java
 ################################################
@@ -58,6 +60,7 @@ JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/bin/java
 Edit the .bashrc config file for Java home location
 ```
 vim ~/.bashrc
+
 ####################ADD TEXT####################
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH
@@ -94,6 +97,7 @@ chmod +x /opt/tomcat/bin/*
 Edit the .bashrc config file for Tomcat home location
 ```
 vim ~/.bashrc
+
 ####################ADD TEXT####################
 export CATALINA_HOME=/opt/tomcat
 ################################################
@@ -106,6 +110,7 @@ echo $CATALINA_HOME
 Add Apache Tomcat as a Systemd Service
 ```
 vim /etc/systemd/system/tomcat.service
+
 ####################ADD TEXT####################
 [Unit]
 Description=Apache Tomcat 9 Servlet Container
@@ -143,6 +148,7 @@ systemctl status tomcat
 Configure Tomcat user configuration file. Change ***USER*** & ***PASS***
 ```
 vim /opt/tomcat/conf/tomcat-users.xml
+
 ####################ADD TEXT####################
 <role rolename="admin"/>
 <role rolename="admin-gui"/>
@@ -154,6 +160,7 @@ vim /opt/tomcat/conf/tomcat-users.xml
 Edit Tomcat context file for manager. Comment out block.
 ```
 vim /opt/tomcat/webapps/manager/META-INF/context.xml
+
 ####################MOD TEXT####################
 <!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
 allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
@@ -162,6 +169,7 @@ allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
 Edit Tomcat context file for host-manager. Comment out block.
 ```
 vim /opt/tomcat/webapps/host-manager/META-INF/context.xml
+
 ####################MOD TEXT####################
 <!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
 allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
@@ -197,6 +205,7 @@ chown -R tomcat:tomcat /opt/certs
 Configure server.xml with ZeroSSL certificats
 ```
 vim /opt/tomcat/conf/server.xml
+
 ####################ADD TEXT####################
 <Connector 
 	port="8443" 
