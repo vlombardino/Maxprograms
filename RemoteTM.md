@@ -239,6 +239,12 @@ wget https://www.maxprograms.com/downloads/RemoteTM/RemoteTM.war -P /opt/tomcat/
 * Luanch RemoteTM by going to the following link http://localhost:8443/RemoteTM
 * Login with these default credentials: User Name: ***sysadmin*** Password: ***secData***
 ---
+## Notes
+RemoteTM server files.
+```
+cd /opt/tomcat/.config/RemoteTM
+```
+
 ## References
 * https://www.howtoforge.com/how-to-install-java-17-jdk-17-on-debian-11/
 * https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/
