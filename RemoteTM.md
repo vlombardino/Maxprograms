@@ -130,7 +130,7 @@ Reload systemd
 ```
 systemctl daemon-reload
 ```
-Start Apache Tomcate service and add it to system boot
+Start Apache Tomcat service and add it to system boot
 ```
 systemctl start tomcat
 systemctl enable tomcat
