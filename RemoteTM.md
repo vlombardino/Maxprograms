@@ -27,7 +27,7 @@ Set Local unicode
 ```
 locale-gen en_US.UTF-8
 ```
-Command to generate the /etc/default/locale
+Command to generate the ```/etc/default/locale```
 ```
 update-locale LANG=en_US.UTF-8
 ```
