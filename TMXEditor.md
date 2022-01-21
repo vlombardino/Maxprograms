@@ -8,7 +8,7 @@ Install required software.
 ```
 sudo apt install openjdk-17-jdk git
 sudo snap install ant --classic
-sudo snap install node --channel=latest/edge --classic
+sudo snap install node --classic
 ```
 Make folder and set permissions to install TMXEditor.
 ```
