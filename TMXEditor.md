@@ -24,7 +24,7 @@ cd /opt/Maxprograms/TMXEditor
 Build TMXEditor.
 ```
 ant
-npm install
+sudo npm install -g electron --unsafe-perm=true --allow-root
 npm run build
 ```
 Run *npm start* to test if TMXEditor will launch.
