@@ -25,6 +25,7 @@ Build Stingray.
 ```
 ant
 sudo npm install -g electron --unsafe-perm=true --allow-root
+npm install
 npm run build
 ```
 Run *npm start* to test if Stingray will launch.
