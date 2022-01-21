@@ -24,7 +24,7 @@ cd /opt/Maxprograms/Swordfish
 Build Swordfish.
 ```
 ant
-npm install
+sudo npm install -g electron --unsafe-perm=true --allow-root
 npm run build
 ```
 Run *npm start* to test if Swordfish will launch.
