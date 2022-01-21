@@ -27,18 +27,18 @@ sudo rm -r ~/.audio/snddrivr.msa
 ---
 
 ## TMX files
-### Find all tmx files and move to differenct location.
+Find all tmx files and move to differenct location.
 ```
 find . -type f -name "*.tmx" -exec cp {} /tmp/TMX \;
 ```
-### Merege TMX files.
+Merege TMX files.
 > TMXEditor -> File -> Merge TMX Files...
 
 ---
 
 ## Misc
 
-### FixLicense.jar
+FixLicense.jar
 ```
 java –jar FixLicense.jar
 ```
