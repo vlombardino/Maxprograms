@@ -42,3 +42,9 @@ FixLicense.jar
 ```
 java –jar FixLicense.jar
 ```
+Search for text in files (Terminal)
+```
+grep -l '<tuv xml:lang="en-US">' *.tmx
+
+grep -l '"es"' *.tmx
+```
