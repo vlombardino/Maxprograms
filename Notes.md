@@ -48,3 +48,7 @@ grep -l '<tuv xml:lang="en-US">' *.tmx
 
 grep -l '"es"' *.tmx
 ```
+Search for text and replace
+```
+grep -rl 'windows' ./ | xargs sed -i 's/windows/linux/g'
+```
