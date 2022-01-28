@@ -229,6 +229,16 @@ or
 ```
 keytool -genkey -keyalg RSA -noprompt -alias tomcat -dname "CN=localhost, OU=NA, O=NA, L=NA, S=NA, C=NA" -keystore /opt/certs/keystore.jks -validity 9999 -storepass PASS -keypass PASS
 ```
+Restart Tomcat
+```
+systemctl restart tomcat
+```
+Check if Apache Tomcat service is running and ports
+```
+ss -plnt
+systemctl status tomcat
+```
+
 ## Install RemoteTM
 Download [RemoteTM](https://www.maxprograms.com/downloads/RemoteTM/RemoteTM.war) on local computer.
 
