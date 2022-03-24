@@ -198,6 +198,10 @@ Combine certificate.crt & ca_bundle.crt (make sure certificate.crt is on top)
 ```
 cat certificate.crt ca_bundle.crt > domain-crt.crt
 ```
+Rename private.key file
+```
+cp private.key private.pem
+```
 Assign the Tomcat permissions to the certs folders
 ```
 chown -R tomcat:tomcat /opt/certs
@@ -269,4 +273,4 @@ cd /opt/tomcat/.config/RemoteTM
 * https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/
 * https://www.how2shout.com/linux/install-apache-tomcat-10-on-debian-11-linux/
 * https://app.zerossl.com/dashboard
-* https://medium.com/@anil7017/steps-to-install-free-ssl-certificate-on-tomcat-server-222ea4b5b1
+* https://medium.com/@anil7017/steps-to-install-free-ssl-certificate-on-tomcat-server-222ea4b5b15f
