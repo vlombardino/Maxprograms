@@ -78,7 +78,7 @@ mkdir -p /opt/tomcat
 ```
 Download Tomcat from the [Official Webpage](https://tomcat.apache.org/download-90.cgi)
 ```
-wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.56/bin/apache-tomcat-9.0.56.tar.gz
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.64/bin/apache-tomcat-9.0.64.tar.gz
 ```
 Extract Tomcat into Tomcat directory
 ```
