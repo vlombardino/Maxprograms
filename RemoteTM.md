@@ -184,7 +184,7 @@ Access Tomcat web interface
 * http://ip-addres:8080
 * http://youdomain.com:8080
 
-## Install SSL certificate on Tomcat Server ([Comodo SSL]([https://zerossl.com/](https://comodosslstore.com/resources/tomcat-ssl-ssl-certificates-for-tomcat-servers/)))
+## Install SSL certificate on Tomcat Server ([Comodo SSL]([https://zerossl.com/](https://comodosslstore.com/resources/tomcat-ssl-ssl-certificates-for-tomcat-servers/)
 Make certs directory.
 ```
 mkdir -p /opt/certs
@@ -208,7 +208,7 @@ Instrucations for [ssl certificates](https://comodosslstore.com/ssl-certificates
 * Copy/pasting the CSR (open the .txt file) into the relevant field (usually the one labelled CSR).
 * Once the purchase and validation are complete, find SSL certificate (PKCS7 File).
 * Create domain.local.p7b file.
-* Copy contents of the PKCS7.p7b file inside the following:
+* Copy contents of the PKCS7.p7b file inside the following domain.local.p7b file:
 ```
 -----BEGIN PKCS7-----
 data...
