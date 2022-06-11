@@ -186,7 +186,7 @@ Access Tomcat web interface
 
 ---
 
-## Install SSL certificate on Tomcat Server ([Comodo SSL](https://comodosslstore.com/resources/tomcat-ssl-ssl-certificates-for-tomcat-servers/)
+## Install SSL certificate on Tomcat Server [Comodo SSL](https://comodosslstore.com/resources/tomcat-ssl-ssl-certificates-for-tomcat-servers/)
 Make certs directory.
 ```
 mkdir -p /opt/certs
@@ -206,16 +206,22 @@ Make a backup of the kestore.
 cp domain.local.jks domain.local.jks.bak
 ```
 
-Instrucations for [ssl certificates](https://comodosslstore.com/ssl-certificates)
-* Copy/pasting the CSR (open the .txt file) into the relevant field (usually the one labelled CSR).
-* Once the purchase and validation are complete, find SSL certificate (PKCS7 File).
-* Create domain.local.p7b file.
-* Copy contents of the PKCS7.p7b file inside the following domain.local.p7b file:
+Create a PKCS7 file. Required for later.
 ```
+vim /opt/certs/domain.local.p7b
+
+####################ADD TEXT####################
 -----BEGIN PKCS7-----
-data...
+PKCS7 Contents
 -----END PKCS7-----
+################################################
 ```
+
+Instrucations for [Comodo SSL Certificates](https://comodosslstore.com/ssl-certificates)
+* Select Certificate. [PositiveSSL (DV)](https://comodosslstore.com/positivessl.aspx) will work fine.
+* Copy/pasting the CSR (open the .txt file) into the relevant field (usually the one labelled CSR).
+* Once the purchase and validation are complete, find the SSL certificate (PKCS7 File).
+* Copy contents of the PKCS7.p7b file inside the domain.local.p7b file replacing ```PKCS7 Contents```.
 
 Install SSL Certificate inside the keystore
 ```
