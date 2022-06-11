@@ -185,28 +185,28 @@ Access Tomcat web interface
 * http://youdomain.com:8080
 
 ## Install SSL certificate on Tomcat Server ([Comodo SSL]([https://zerossl.com/](https://comodosslstore.com/resources/tomcat-ssl-ssl-certificates-for-tomcat-servers/)))
-Make certs directory
+Make certs directory.
 ```
 mkdir -p /opt/certs
 ```
-Create a new kestore in ```/opt/certs``` directory
+Create a kestore in ```/opt/certs``` directory.
 ```
 keytool -genkey -keysize 2048 -keyalg RSA -noprompt -alias server -dname "CN=domain.local, OU=IT, O=Business, L=City(full name, S=State(full name), C=USA" -keystore domain.local.jks -validity 9999 -storepass PASSWORD -keypass PASSWORD
 ```
 
-Create a CSR
+Create a CSR text file.
 ```
 keytool -certreq -alias server -file csr.txt -keystore domain.local.jks
 ```
 
-Backup kestore
+Make a backup of the kestore.
 ```
 cp domain.local.jks domain.local.jks.bak
 ```
 
 Instrucations for [ssl certificates](https://comodosslstore.com/ssl-certificates)
 * Copy/pasting the CSR (open the .txt file) into the relevant field (usually the one labelled CSR).
-* Once the purchase and validation are complete, the CA will email you a bundle that includes your SSL certificate (PKCS7 File).
+* Once the purchase and validation are complete, find SSL certificate (PKCS7 File).
 * Create domain.local.p7b file.
 * Copy contents of the PKCS7.p7b file inside the following:
 ```
