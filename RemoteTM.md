@@ -184,6 +184,8 @@ Access Tomcat web interface
 * http://ip-addres:8080
 * http://youdomain.com:8080
 
+---
+
 ## Install SSL certificate on Tomcat Server ([Comodo SSL]([https://zerossl.com/](https://comodosslstore.com/resources/tomcat-ssl-ssl-certificates-for-tomcat-servers/)
 Make certs directory.
 ```
@@ -254,6 +256,7 @@ Check if Apache Tomcat service is running and ports
 ss -plnt
 systemctl status tomcat
 ```
+---
 
 ## Install RemoteTM
 Download [RemoteTM](https://www.maxprograms.com/downloads/RemoteTM/RemoteTM.war) on local computer.
@@ -279,6 +282,7 @@ RemoteTM server files.
 ```
 cd /opt/tomcat/.config/RemoteTM
 ```
+---
 
 ## References
 * https://www.howtoforge.com/how-to-install-java-17-jdk-17-on-debian-11/
