@@ -246,7 +246,8 @@ nano /opt/tomcat/conf/server.xml
 	secure="true"
 	SSLEnabled="true" 
 	clientAuth="false"
-	sslProtocol="TLS" keyAlias="server"
+	sslProtocol="TLS" 
+	keyAlias="server"
 	keystoreFile="/opt/certs/domain.local.jks"
 	keystorePass="PASSWORD" 
 />
