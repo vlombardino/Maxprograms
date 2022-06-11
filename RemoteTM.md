@@ -193,7 +193,7 @@ mkdir -p /opt/certs
 ```
 Create a kestore in ```/opt/certs``` directory.
 ```
-keytool -genkey -keysize 2048 -keyalg RSA -noprompt -alias server -dname "CN=domain.local, OU=IT, O=Business, L=City(full name, S=State(full name), C=USA" -keystore domain.local.jks -validity 9999 -storepass PASSWORD -keypass PASSWORD
+keytool -genkey -keysize 2048 -keyalg RSA -noprompt -alias server -dname "CN=domain.local, OU=IT, O=Business, L=City(full name), S=State(full name), C=USA" -keystore domain.local.jks -validity 9999 -storepass PASSWORD -keypass PASSWORD
 ```
 
 Create a CSR text file.
