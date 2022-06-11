@@ -186,7 +186,7 @@ Access Tomcat web interface
 
 ---
 
-## Install SSL certificate on Tomcat Server ([Comodo SSL]([https://zerossl.com/](https://comodosslstore.com/resources/tomcat-ssl-ssl-certificates-for-tomcat-servers/)
+## Install SSL certificate on Tomcat Server ([Comodo SSL](https://comodosslstore.com/resources/tomcat-ssl-ssl-certificates-for-tomcat-servers/)
 Make certs directory.
 ```
 mkdir -p /opt/certs
