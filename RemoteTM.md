@@ -184,55 +184,67 @@ Access Tomcat web interface
 * http://ip-addres:8080
 * http://youdomain.com:8080
 
-## Install Free SSL certificate on Tomcat Server ([ZeroSSL](https://zerossl.com/))
+## Install SSL certificate on Tomcat Server ([Comodo SSL]([https://zerossl.com/](https://comodosslstore.com/resources/tomcat-ssl-ssl-certificates-for-tomcat-servers/)))
 Make certs directory
 ```
 mkdir -p /opt/certs
 ```
-Add needed files for SSL to **/opt/certs** directory
-* ca_bundle.crt
-* certificate.crt
-* private.key
+Create a new kestore in ```/opt/certs``` directory
+```
+keytool -genkey -keysize 2048 -keyalg RSA -noprompt -alias server -dname "CN=domain.local, OU=IT, O=Business, L=City(full name, S=State(full name), C=USA" -keystore domain.local.jks -validity 9999 -storepass PASSWORD -keypass PASSWORD
+```
 
-Combine certificate.crt & ca_bundle.crt (make sure certificate.crt is on top)
+Create a CSR
 ```
-cat certificate.crt ca_bundle.crt > domain-crt.crt
+keytool -certreq -alias server -file csr.txt -keystore domain.local.jks
 ```
-Rename private.key file
+
+Backup kestore
 ```
-cp private.key private.pem
+cp domain.local.jks domain.local.jks.bak
 ```
-Assign the Tomcat permissions to the certs folders
+
+Instrucations for [ssl certificates](https://comodosslstore.com/ssl-certificates)
+* Copy/pasting the CSR (open the .txt file) into the relevant field (usually the one labelled CSR).
+* Once the purchase and validation are complete, the CA will email you a bundle that includes your SSL certificate (PKCS7 File).
+* Create domain.local.p7b file.
+* Copy contents of the PKCS7.p7b file inside the following:
 ```
-chown -R tomcat:tomcat /opt/certs
+-----BEGIN PKCS7-----
+data...
+-----END PKCS7-----
 ```
-Configure server.xml with ZeroSSL certificats
+
+Install SSL Certificate inside the keystore
+```
+keytool -import -alias server -file domain.local.p7b -keystore domain.local.jks
+```
+
+Configure server.xml with SSL Certificates
 ```
 vim /opt/tomcat/conf/server.xml
 
 ####################ADD TEXT####################
 <Connector 
 	port="8443" 
-	protocol="org.apache.coyote.http11.Http11NioProtocol"
- 	maxThreads="150" 
-	SSLEnabled="true">
- <SSLHostConfig>
- 	<Certificate 
- 		certificateKeyFile="/opt/certs/private.pem"
- 		certificateFile="/opt/certs/domain-crt.crt"
- 		type="RSA" />
- </SSLHostConfig>
-</Connector>
+	maxHttpHeaderSize="8192" 
+	maxThreads="100"
+	minSpareThreads="25" 
+	maxSpareThreads="75"
+	enableLookups="false" 
+	disableUploadTimeout="true"
+	acceptCount="100" 
+	scheme="https" 
+	secure="true"
+	SSLEnabled="true" 
+	clientAuth="false"
+	sslProtocol="TLS" keyAlias="server"
+	keystoreFile="/opt/certs/domain.local.jks"
+	keystorePass="PASSWORD" 
+/>
 ################################################
 ```
-Not necessary but command to create kestore
-```
-keytool -genkey -keystore /opt/certs/keystore.jks -alias tomcat -keyalg RSA -keysize 2048 -validity 9999
-```
-or
-```
-keytool -genkey -keyalg RSA -noprompt -alias tomcat -dname "CN=localhost, OU=NA, O=NA, L=NA, S=NA, C=NA" -keystore /opt/certs/keystore.jks -validity 9999 -storepass PASS -keypass PASS
-```
+
 Restart Tomcat
 ```
 systemctl restart tomcat
@@ -272,5 +284,6 @@ cd /opt/tomcat/.config/RemoteTM
 * https://www.howtoforge.com/how-to-install-java-17-jdk-17-on-debian-11/
 * https://www.howtoforge.com/tutorial/ubuntu-apache-tomcat/
 * https://www.how2shout.com/linux/install-apache-tomcat-10-on-debian-11-linux/
-* https://app.zerossl.com/dashboard
-* https://medium.com/@anil7017/steps-to-install-free-ssl-certificate-on-tomcat-server-222ea4b5b15f
+* https://comodosslstore.com/resources/tomcat-ssl-ssl-certificates-for-tomcat-servers/
+* https://comodosslstore.com/positivessl.aspx
+* https://certpanel.com/
