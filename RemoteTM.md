@@ -193,17 +193,17 @@ mkdir -p /opt/certs
 ```
 Create a kestore in ```/opt/certs``` directory.
 ```
-keytool -genkey -keysize 2048 -keyalg RSA -noprompt -alias server -dname "CN=domain.local, OU=IT, O=Business, L=City(full name), S=State(full name), C=USA" -keystore domain.local.jks -validity 9999 -storepass PASSWORD -keypass PASSWORD
+keytool -genkey -keysize 2048 -keyalg RSA -noprompt -alias server -dname "CN=domain.local, OU=IT, O=Business, L=City(full name), S=State(full name), C=USA" -keystore /opt/certs/domain.local.jks -validity 9999 -storepass PASSWORD -keypass PASSWORD
 ```
 
 Create a CSR text file.
 ```
-keytool -certreq -alias server -file csr.txt -keystore domain.local.jks
+keytool -certreq -alias server -file /opt/certs/csr.txt -keystore /opt/certs/domain.local.jks
 ```
 
 Make a backup of the kestore.
 ```
-cp domain.local.jks domain.local.jks.bak
+cp /opt/certs/domain.local.jks /opt/certs/domain.local.jks.bak
 ```
 
 Create a PKCS7 file. Required for later.
