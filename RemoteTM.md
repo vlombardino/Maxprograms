@@ -14,7 +14,7 @@ apt update && apt upgrade -y
 ```
 Allow root ssh access by adding PermitRootLogin
 ```
-vim.tiny /etc/ssh/sshd_config
+nano /etc/ssh/sshd_config
 
 ####################ADD TEXT####################
 PermitRootLogin yes
@@ -38,7 +38,7 @@ local
 ```
 Install required software
 ```
-apt install vim tar wget -y
+apt install tar wget -y
 ```
 ## Install & configure Java
 Install java 17
@@ -51,7 +51,7 @@ update-alternatives --config java
 ```
 Add Java to environment file
 ```
-vim /etc/environment
+nano /etc/environment
 
 ####################ADD TEXT####################
 JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/bin/java
@@ -59,7 +59,7 @@ JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/bin/java
 ```
 Edit the .bashrc config file for Java home location
 ```
-vim ~/.bashrc
+nano ~/.bashrc
 
 ####################ADD TEXT####################
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
@@ -96,7 +96,7 @@ chmod +x /opt/tomcat/bin/*
 ```
 Edit the .bashrc config file for Tomcat home location
 ```
-vim ~/.bashrc
+nano ~/.bashrc
 
 ####################ADD TEXT####################
 export CATALINA_HOME=/opt/tomcat
@@ -109,7 +109,7 @@ echo $CATALINA_HOME
 ```
 Add Apache Tomcat as a Systemd Service
 ```
-vim /etc/systemd/system/tomcat.service
+nano /etc/systemd/system/tomcat.service
 
 ####################ADD TEXT####################
 [Unit]
@@ -147,7 +147,7 @@ systemctl status tomcat
 ```
 Configure Tomcat user configuration file. Change ***USER*** & ***PASS***
 ```
-vim /opt/tomcat/conf/tomcat-users.xml
+nano /opt/tomcat/conf/tomcat-users.xml
 
 ####################ADD TEXT####################
 <role rolename="admin"/>
@@ -159,7 +159,7 @@ vim /opt/tomcat/conf/tomcat-users.xml
 ```
 Edit Tomcat context file for manager. Comment out block.
 ```
-vim /opt/tomcat/webapps/manager/META-INF/context.xml
+nano /opt/tomcat/webapps/manager/META-INF/context.xml
 
 ####################MOD TEXT####################
 <!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
@@ -168,7 +168,7 @@ allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
 ```
 Edit Tomcat context file for host-manager. Comment out block.
 ```
-vim /opt/tomcat/webapps/host-manager/META-INF/context.xml
+nano /opt/tomcat/webapps/host-manager/META-INF/context.xml
 
 ####################MOD TEXT####################
 <!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
@@ -208,7 +208,7 @@ cp domain.local.jks domain.local.jks.bak
 
 Create a PKCS7 file. Required for later.
 ```
-vim /opt/certs/domain.local.p7b
+nano /opt/certs/domain.local.p7b
 
 ####################ADD TEXT####################
 -----BEGIN PKCS7-----
@@ -230,7 +230,7 @@ keytool -import -alias server -file domain.local.p7b -keystore domain.local.jks
 
 Configure server.xml with SSL Certificates
 ```
-vim /opt/tomcat/conf/server.xml
+nano /opt/tomcat/conf/server.xml
 
 ####################ADD TEXT####################
 <Connector 
