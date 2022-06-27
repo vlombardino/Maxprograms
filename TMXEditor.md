@@ -55,7 +55,7 @@ Categories=TMXEditor
 EOF
 ```
 
-## Update Swordfish
+## Update TMXEditor
 ```
 git -C /opt/Maxprograms/TMXEditor/ pull
 ```
