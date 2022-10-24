@@ -64,7 +64,7 @@ Or
 ```
 cd /opt/Maxprograms/Swordfish && git pull
 ```
-Or remove previous version and re-download current version. Make sure to rebuild current version.
+Or remove previous version then re-download and rebuild current version.
 ```
 sudo rm -r /opt/Maxprograms/Swordfish && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/Swordfish.git
 
