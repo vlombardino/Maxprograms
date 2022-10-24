@@ -67,4 +67,10 @@ cd /opt/Maxprograms/Swordfish && git pull
 Or remove previous version and re-download current version. Make sure to rebuild current version.
 ```
 sudo rm -r /opt/Maxprograms/Swordfish && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/Swordfish.git
+
+cd /opt/Maxprograms/Swordfish
+ant
+sudo npm install -g electron --unsafe-perm=true --allow-root
+npm install
+npm run build
 ```
