@@ -6,9 +6,17 @@ The following are steps to install Swordfish from source on Ubuntu 20.04
 ## Install software and build from source
 Install required software.
 ```
-sudo apt install openjdk-17-jdk git
+sudo apt install openjdk-17-jdk git curl
 sudo snap install ant --classic
-sudo snap install node --classic
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt install nodejs
+sudo npm install -g npm@latest
+```
+
+## Check node.js and npm versions
+```
+node -v
+npm -v
 ```
 
 Make folder and set permissions to install Swordfish.
@@ -25,8 +33,8 @@ cd /opt/Maxprograms/Swordfish
 Build Swordfish.
 ```
 ant
-sudo npm install -g electron --unsafe-perm=true --allow-root
-npm install
+sudo npm install -g electron --unsafe-perm=true --allow-root --no-fund
+npm install --no-fund
 npm run build
 ```
 Run *npm start* to test if Swordfish will launch.
@@ -70,7 +78,6 @@ sudo rm -r /opt/Maxprograms/Swordfish && cd /opt/Maxprograms/ && git clone https
 
 cd /opt/Maxprograms/Swordfish
 ant
-sudo npm install -g electron --unsafe-perm=true --allow-root
-npm install
+npm install electron --save-dev --no-fund
 npm run build
 ```
