@@ -13,7 +13,7 @@ sudo apt install nodejs
 sudo npm install -g npm@latest
 ```
 
-## Check node.js and npm versions
+Check node.js and npm versions
 ```
 node -v
 npm -v
