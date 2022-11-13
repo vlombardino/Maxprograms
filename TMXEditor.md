@@ -6,9 +6,11 @@ The following are steps to install TMXEditor from source on Ubuntu 20.04
 ## Install software and build from source
 Install required software.
 ```
-sudo apt install openjdk-17-jdk git
+sudo apt install openjdk-17-jdk git curl
 sudo snap install ant --classic
-sudo snap install node --classic
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt install nodejs
+sudo npm install -g npm@latest
 ```
 Make folder and set permissions to install TMXEditor.
 ```
@@ -24,8 +26,8 @@ cd /opt/Maxprograms/TMXEditor
 Build TMXEditor.
 ```
 ant
-sudo npm install -g electron --unsafe-perm=true --allow-root
-npm install
+sudo npm install -g electron --unsafe-perm=true --allow-root --no-fund
+npm install --no-fund
 npm run build
 ```
 Run *npm start* to test if TMXEditor will launch.
@@ -66,4 +68,15 @@ cd /opt/Maxprograms/TMXEditor && git pull
 Or remove previous version and re-download current version. Make sure to rebuild current version.
 ```
 sudo rm -r /opt/Maxprograms/TMXEditor && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/TMXEditor.git
+cd /opt/Maxprograms/TMXEditor
+ant
+npm install electron --save-dev --no-fund
+npm run build
 ```
+
+## Fix npm warnings
+```
+npm install @npmcli/move-file
+npm install @npmcli/fs
+```
+
