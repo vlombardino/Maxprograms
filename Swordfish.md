@@ -11,12 +11,14 @@ sudo snap install ant --classic
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt install nodejs
 sudo npm install -g npm@latest
+sudo apt install node-typescript
 ```
 
 Check node.js and npm versions
 ```
 node -v
 npm -v
+tsc -v
 ```
 
 Make folder and set permissions to install Swordfish.

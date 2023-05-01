@@ -283,12 +283,44 @@ wget https://www.maxprograms.com/downloads/RemoteTM/RemoteTM.war -P /opt/tomcat/
 ## Web Access
 * Luanch RemoteTM by going to the following link http://localhost:8443/RemoteTM
 * Login with these default credentials: User Name: ***sysadmin*** Password: ***secData***
+
 ---
+
 ## Notes
-RemoteTM server files.
+
+### RemoteTM server files.
 ```
 cd /opt/tomcat/.config/RemoteTM
 ```
+
+### Setup up email server [Gmail]
+SMTP Server
+```
+smtp.gmail.com
+```
+Port
+```
+465
+```
+SMTP User
+```
+username@gmail.com
+```
+SMTP Password [App passwords](https://myaccount.google.com/apppasswords)
+```
+gmail app password
+```
+Send From
+```
+RemoteTM
+```
+RemotTM Server
+```
+https://localhost:8443/RemoteTM
+```
+- [x] Authentication Required
+- [x] Use TLS
+
 ---
 
 ## References
