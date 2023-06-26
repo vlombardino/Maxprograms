@@ -201,7 +201,12 @@ Create a CSR text file.
 keytool -certreq -alias server -file /opt/certs/csr.txt -keystore /opt/certs/domain.local.jks
 ```
 
-Make a backup of the kestore.
+View contents of keystore.
+```
+keytool -v -list -keystore /opt/certs/domain.local.jks
+```
+
+Make a backup of the keystore.
 ```
 cp /opt/certs/domain.local.jks /opt/certs/domain.local.jks.bak
 ```
