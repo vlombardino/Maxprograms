@@ -76,6 +76,15 @@ Or
 ```
 cd /opt/Maxprograms/TMXEditor && git pull
 ```
+Or backup previous version then re-download and rebuild current version.
+```
+sudo mv /opt/Maxprograms/TMXEditor /opt/Maxprograms/TMXEditor.bak && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/TMXEditor.git
+
+cd /opt/Maxprograms/TMXEditor
+ant
+npm install electron --save-dev --no-fund
+npm run build
+```
 Or remove previous version and re-download current version. Make sure to rebuild current version.
 ```
 sudo rm -r /opt/Maxprograms/TMXEditor && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/TMXEditor.git
