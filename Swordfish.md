@@ -76,7 +76,7 @@ cd /opt/Maxprograms/Swordfish && git pull
 ```
 Or backup previous version then re-download and rebuild current version.
 ```
-sudo mv /opt/Maxprograms/Swordfish /opt/Maxprograms/Swordfish.bak && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/Swordfish.git
+sudo mv /opt/Maxprograms/Swordfish /opt/Maxprograms/Swordfish.bak.$(date "+%Y.%m.%d") && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/Swordfish.git
 
 cd /opt/Maxprograms/Swordfish
 ant
