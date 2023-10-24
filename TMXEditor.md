@@ -78,7 +78,7 @@ cd /opt/Maxprograms/TMXEditor && git pull
 ```
 Or backup previous version then re-download and rebuild current version.
 ```
-sudo mv /opt/Maxprograms/TMXEditor /opt/Maxprograms/TMXEditor.bak && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/TMXEditor.git
+sudo mv /opt/Maxprograms/TMXEditor /opt/Maxprograms/TMXEditor.bak.$(date "+%Y.%m.%d") && cd /opt/Maxprograms/ && git clone https://github.com/rmraya/TMXEditor.git
 
 cd /opt/Maxprograms/TMXEditor
 ant
