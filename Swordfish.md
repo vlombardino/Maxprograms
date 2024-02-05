@@ -68,6 +68,7 @@ EOF
 
 ## Update Swordfish
 ```
+git -C /opt/Maxprograms/Swordfish/ reset --hard
 git -C /opt/Maxprograms/Swordfish/ pull
 ```
 Or
