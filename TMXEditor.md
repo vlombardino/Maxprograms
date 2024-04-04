@@ -70,6 +70,8 @@ EOF
 
 ## Update TMXEditor
 ```
+cp -r /opt/Maxprograms/TMXEditor /opt/Maxprograms/TMXEditor.bak.$(date "+%Y.%m.%d")
+git -C /opt/Maxprograms/TMXEditor/ reset --hard
 git -C /opt/Maxprograms/TMXEditor/ pull
 ```
 Or

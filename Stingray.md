@@ -57,6 +57,8 @@ EOF
 
 ## Update Stingray
 ```
+cp -r /opt/Maxprograms/Stingray /opt/Maxprograms/Stingray.bak.$(date "+%Y.%m.%d")
+git -C /opt/Maxprograms/Stingray/ reset --hard
 git -C /opt/Maxprograms/Stingray/ pull
 ```
 Or

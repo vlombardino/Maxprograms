@@ -68,6 +68,7 @@ EOF
 
 ## Update Swordfish
 ```
+cp -r /opt/Maxprograms/Swordfish /opt/Maxprograms/Swordfish.bak.$(date "+%Y.%m.%d")
 git -C /opt/Maxprograms/Swordfish/ reset --hard
 git -C /opt/Maxprograms/Swordfish/ pull
 ```

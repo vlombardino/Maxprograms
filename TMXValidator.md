@@ -57,6 +57,8 @@ EOF
 
 ## Update Swordfish
 ```
+cp -r /opt/Maxprograms/TMXValidator /opt/Maxprograms/TMXValidator.bak.$(date "+%Y.%m.%d")
+git -C /opt/Maxprograms/TMXValidator/ reset --hard
 git -C /opt/Maxprograms/TMXValidator/ pull
 ```
 Or
