@@ -54,7 +54,7 @@ cat << EOF >>  ~/.local/share/applications/swordfish.desktop
 Encoding=UTF-8
 Name=Swordfish
 Type=Application
-Exec=electron /opt/Maxprograms/Swordfish
+Exec=electron /opt/Maxprograms/Swordfish --disable-gpu
 Icon=/opt/Maxprograms/Swordfish/icons/icon.png
 Terminal=false
 GenericName=Swordfish
